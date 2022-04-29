@@ -62,6 +62,9 @@ class Server
             )
         }
       end
+      if opt[:ssl_ca_file]
+        ctx.ca_file = opt[:ssl_ca_file]
+      end
       if opt[:ssl_ca_path]
         ctx.ca_path = opt[:ssl_ca_path]
         ctx.verify_mode = opt[:ssl_verify_mode] ||
